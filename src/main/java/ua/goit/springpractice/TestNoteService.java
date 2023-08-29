@@ -34,6 +34,7 @@ public class TestNoteService {
         } catch (NoSuchElementException e) {
             System.out.println(e.getMessage());
         }
+
         try {
             Note thirdNote = new Note("second", "12asd");
             thirdNote.setId(3L);

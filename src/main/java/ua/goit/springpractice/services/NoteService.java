@@ -1,6 +1,5 @@
 package ua.goit.springpractice.services;
 
-import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 import ua.goit.springpractice.entities.Note;
 
@@ -10,8 +9,7 @@ import java.util.*;
 public class NoteService {
     private Map<Long, Note> notes;
 
-    @PostConstruct
-    public void init() {
+    public NoteService() {
         notes = new HashMap<>();
     }
 
