@@ -7,7 +7,7 @@ import java.util.*;
 
 @Service
 public class NoteService {
-    private Map<Long, Note> notes;
+    private final Map<Long, Note> notes;
 
     public NoteService() {
         notes = new HashMap<>();

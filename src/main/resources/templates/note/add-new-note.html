@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Note</title>
+    <title>List Notes</title>
 </head>
 
 <body>
-<form th:action="@{/note/edit/{id} (id=${note.getId()})}" method="post">
+<form th:action="@{/note/add}" method="post">
     <h2>Add new Note</h2>
     <table>
         <tr>
             <td>
-                Edit note title:
+                Input note title:
             </td>
             <td>
-                <input id="title" name="title" th:value="${note.getTitle()}" maxlength="20" size="15">
+                <input id="title" name="title" maxlength="20" size="15">
             </td>
         </tr>
         <tr>
             <td>
-                Edit note:
+                Input note:
             </td>
             <td>
-                <input id="note" name="note" th:value="${note.getContent()}" maxlength="20" size="15">
+                <input id="note" name="note" maxlength="20" size="15">
             </td>
         </tr>
         <tr>

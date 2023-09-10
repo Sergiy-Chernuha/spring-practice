@@ -1,16 +1,20 @@
 package ua.goit.springpractice.entities;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
-//@Component
-//@Scope("prototype")
 public class Note {
     private Long id;
     private String title;
     private String content;
 
+    public Note() {
+    }
+
     public Note(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    public Note(Long id, String title, String content) {
+        this.id = id;
         this.title = title;
         this.content = content;
     }

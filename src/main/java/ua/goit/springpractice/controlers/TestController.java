@@ -1,10 +1,15 @@
-package ua.goit.springmvc.controlers;
+package ua.goit.springpractice.controlers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-public interface TestController {
+@Controller
+public class TestController {
+
     @RequestMapping(value = "/test", method = {RequestMethod.GET})
-    ModelAndView testController();
+    public ModelAndView testController() {
+        return new ModelAndView("for-test");
+    }
 }
