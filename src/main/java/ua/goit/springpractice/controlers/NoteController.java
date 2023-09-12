@@ -59,11 +59,8 @@ public class NoteController {
     }
 
     @PostMapping(value = "/edit")
-    public ModelAndView editNote(@RequestParam(name = "id") Long id
-            , @RequestParam(name = "title") String editedTitle
-            , @RequestParam(name = "content") String editedNote) {
-
-        noteService.update(new Note(id, editedTitle, editedNote));
+    public ModelAndView editNote(Note note) {
+        noteService.update(note);
 
         return new ModelAndView("redirect:/note/list");
     }
