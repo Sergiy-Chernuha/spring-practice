@@ -8,7 +8,7 @@
 <body>
 <div>
     <h2>List of Notes</h2>
-    <table th:each="note :${notes.listAll()}">
+    <table th:each="note :${notes}">
         <tr>
             <td><a th:text="${note.getTitle()}"></a></td>
             <td><a th:text="${note.getContent()}"></a></td>

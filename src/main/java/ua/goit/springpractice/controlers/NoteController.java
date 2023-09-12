@@ -2,26 +2,28 @@ package ua.goit.springpractice.controlers;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ua.goit.springpractice.entities.Note;
-import ua.goit.springpractice.services.NoteService;
+import ua.goit.springpractice.services.NoteServiceImpl.NoteServiceImpl;
 
 @Controller
 @RequestMapping(value = "/note", consumes = MediaType.ALL_VALUE)
 public class NoteController {
-    NoteService noteService;
+    NoteServiceImpl noteService;
 
-    public NoteController() {
-        noteService = new NoteService();
-        noteService.add(new Note(1L, "First", "note"));
+    public NoteController(NoteServiceImpl noteService) {
+        this.noteService = noteService;
     }
 
     @GetMapping(value = "/list")
     public ModelAndView getNotes() {
         ModelAndView result = new ModelAndView("note/list-notes");
 
-        result.addObject("notes", noteService);
+        result.addObject("notes", noteService.listAll());
 
         return result;
     }
