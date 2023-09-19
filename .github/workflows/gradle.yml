@@ -16,7 +16,6 @@ permissions:
 
 jobs:
   test:
-#  build:
 
     runs-on: ubuntu-latest
 
