@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Note</title>
+</head>
+
+<body>
+<form th:action="@{/note/edit}" method="post">
+    <h2>Add new Note</h2>
+    <table>
+        <tr>
+            <td>
+                Edit note title:
+            </td>
+            <td>
+                <input id="title" name="title" th:value="${note.getTitle()}" maxlength="20" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Edit note:
+            </td>
+            <td>
+                <input id="content" name="content" th:value="${note.getContent()}" maxlength="20" size="15">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button name="id" th:value="${note.getId()}" type="submit">Ok</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
